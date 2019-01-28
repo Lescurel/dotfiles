@@ -10,3 +10,5 @@ Some screenshot :
 ## TODO
 
 - [ ] See if using home-manager for all is better than just using wrappers (need to support bspwm tho)
+- [ ] Write a shell script to run CUDA programs using prime
+
