@@ -1,0 +1,15 @@
+filetype plugin indent on
+" configure maralla/completor to use tab
+" other configurations are possible (see website)
+set background=dark
+syntax on
+" set background=light
+" colo PaperColor
+set number
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+set mouse=a
+" replace tabs
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
