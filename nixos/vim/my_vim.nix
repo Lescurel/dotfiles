@@ -78,8 +78,8 @@ vim_configurable.customize {
       syntax on
       colo gruvbox
 
-      " set background=light
-      " colo PaperColor
+      #" set background=light
+      #" colo PaperColor
 
       set number
 

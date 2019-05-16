@@ -1,4 +1,9 @@
 {pkgs, terminal, rofi}:
+let
+  udiskie-helper = import ./udiskie-rofi.nix {
+    inherit pkgs; rofi=rofi;
+  };
+in 
 ''
 #
 # wm independent hotkeys
@@ -22,6 +27,9 @@ super + @space
 
 super + w
 	${rofi} -show windowcd
+
+super + d
+    ${udiskie-helper}
 
 # polybar 
 super + p 
@@ -152,11 +160,11 @@ XF86AudioMute
 
 # Brightness goes up
 XF86MonBrightnessUp
-	/run/wrappers/bin/light -A 5
+	${pkgs.light}/bin/light -A 5
 
 # Brightness goes down
 XF86MonBrightnessDown
-	/run/wrappers/bin/light -U 5
+	${pkgs.light}/bin/light -U 5
 
 # cycle windows 
 super + Tab 

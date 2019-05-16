@@ -7,7 +7,7 @@ let
   };
 
   rofi-config-file = pkgs.writeTextFile {
-    name = "technomancer-rofi.config";
+    name = "rofi.config";
     text = rofi-config;
   };
 
@@ -17,5 +17,5 @@ let
     '';
 
 in
-  pkgs.writeScript "svarog-rofi" roficmd
+  pkgs.writeScript "nixos-rofi" roficmd
 

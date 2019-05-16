@@ -35,7 +35,7 @@ font-0 = Iosevka Mono:pixelsize=12;3
 font-1 = Hack:pixelsize=10;1
 font-2 = Unifont:fontformat=truetype:size=8:antialias=false;0
 font-3 = Siji:pixelsize=10;1
-font-4 = FontAwesome:pixelsize=10;1
+font-4 = Font Awesome 5:pixelsize=10;1
 
 modules-left = date
 modules-center = bspwm

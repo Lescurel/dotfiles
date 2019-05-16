@@ -3,8 +3,9 @@
 with import ./configuration.nix;
 let
 
-  urxvt = import ./urxvt/urxvt.nix { inherit pkgs; }; 
-  rofi = import ./rofi/rofi.nix { inherit pkgs; terminal = urxvt; };
+  # urxvt = import ./urxvt/urxvt.nix { inherit pkgs; }; 
+  kitty = import ./kitty/kitty.nix {inherit pkgs; };
+  rofi = import ./rofi/rofi.nix { inherit pkgs; terminal = kitty; };
   polybar = import ./polybar/polybar.nix { inherit pkgs; };
   dunst = import ./dunst/dunst.nix { inherit pkgs; };
   wallpaper = pkgs.copyPathToStore ./art/wallpaper-1920-1080.jpg;  
@@ -23,7 +24,7 @@ let
 
   sxhkd-config = 
     import ./sxhkd/sxhkd.nix {
-      terminal = urxvt;
+      terminal = kitty;
       inherit pkgs rofi;
     };
 
@@ -42,15 +43,16 @@ with colors; {
     gtk2-theme
   ];
   
-  fonts.fonts = [
-    pkgs.ubuntu_font_family
-    pkgs.powerline-fonts
-    pkgs.noto-fonts-emoji
-    pkgs.font-awesome-ttf
-    pkgs.hack-font
-    pkgs.siji
-    pkgs.unifont
-    pkgs.iosevka
+  fonts.fonts = with pkgs;[
+    ubuntu_font_family
+    fira-code
+    powerline-fonts
+    noto-fonts-emoji
+    font-awesome-ttf
+    hack-font
+    siji
+    unifont
+    iosevka
   ];
 
   # Desktop environment
@@ -58,9 +60,13 @@ with colors; {
     compton = {
       enable = true;
       fade = true;
-      opacityRules = [ "90:class_g = 'URxvt' && !_NET_WM_STATE@:32a" ];
+      opacityRules = [ "90:class_g = 'kitty' && !_NET_WM_STATE@:32a" ];
     };
     xserver = {
+      serverFlagsSection = ''
+          Option "BlankTime" "0"	      
+        '';
+
       desktopManager = {
        default = "none";
        xterm.enable = false;

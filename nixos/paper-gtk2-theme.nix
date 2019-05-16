@@ -1,8 +1,8 @@
 pkgs:
 let
   gtk2theme = {
-    package = pkgs.paper-gtk-theme;
-    name = "Paper";
+    package = pkgs.nordic;
+    name = "Nordic";
   };
 
   iconTheme = {

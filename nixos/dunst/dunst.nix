@@ -14,5 +14,5 @@ let
 in
 
   pkgs.writeScript
-  "svarog-dunst"
+  "nixos-dunst"
 ''${pkgs.dunst}/bin/dunst -conf ${dunst-config-file} $@''
