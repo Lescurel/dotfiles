@@ -22,6 +22,9 @@ ${pkgs.feh}/bin/feh --bg-fill ${wallpaper} &
 /run/current-system/sw/bin/bspc config initial_polarity 	 second_child
 
 /run/current-system/sw/bin/bspc config focus_follows_pointer true
+  
+/run/current-system/sw/bin/bspc config presel_feedback_color "${blue}"
+/run/current-system/sw/bin/bspc config urgent_border_color "${red}"
 
 ${notification} &
 
