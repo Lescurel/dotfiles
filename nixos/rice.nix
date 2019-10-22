@@ -60,8 +60,8 @@ with colors; {
     compton = {
       enable = true;
       fade = true;
-      opacityRules = [ "90:class_g = 'kitty' && !_NET_WM_STATE@:32a
-          63:class_g = 'Bspwm' && class_i = 'presel_feedback'"
+      opacityRules = [ "90:class_g = 'kitty' && !_NET_WM_STATE@:32a"
+                       "50:class_g = 'Bspwm' && class_i = 'presel_feedback'"
         ];
     };
     xserver = {
