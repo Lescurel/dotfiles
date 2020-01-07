@@ -70,33 +70,33 @@ with colors; {
         '';
 
       desktopManager = {
-       default = "none";
        xterm.enable = false;
       }; 
      
      # Setting up the display manager
-      displayManager.lightdm = {
-        enable = true;
-        background = wallpaper-blurred;
-        # autoLogin.enable = true;
-        # autoLogin.user = "beren";
-        greeters.mini = {
-        enable = true;
-        user = "beren";
-           extraConfig = ''
-               [greeter]
-               show-password-label = false
-        [greeter-theme]
-               font = Ubuntu Mono
-               border-width = 0px
-               border-color = "${blue}"
-               window-color = "${dark}"
-        layout-space = 0
-        password-color = "${light}"
-        password-background-color = "${dark}"
-               
-           '';
-        };  
+      displayManager = {
+        defaultSession = "none+bspwm";
+        lightdm = {
+          enable = true;
+          background = wallpaper-blurred;
+          greeters.mini = {
+          enable = true;
+          user = "beren";
+             extraConfig = ''
+                 [greeter]
+                 show-password-label = false
+          [greeter-theme]
+                 font = Ubuntu Mono
+                 border-width = 0px
+                 border-color = "${blue}"
+                 window-color = "${dark}"
+          layout-space = 0
+          password-color = "${light}"
+          password-background-color = "${dark}"
+                 
+             '';
+          };  
+        };
       };
 
       # Setup bspwm
@@ -117,7 +117,6 @@ with colors; {
   #      enable = true;
   #};
 
-  services.xserver.windowManager.default = "bspwm";
 
   environment.systemPackages = [ pkgs.dunst pkgs.ubuntu_font_family ];
 }

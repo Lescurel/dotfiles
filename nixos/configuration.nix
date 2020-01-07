@@ -39,10 +39,9 @@
 
   # Select internationalisation properties.
   i18n = {
-    consoleKeyMap = "us";
     defaultLocale = "en_US.UTF-8";
   };
-
+  console.keyMap = "us";
   # Set your time zone.
   time.timeZone = "Europe/Paris";
 
@@ -132,8 +131,8 @@
   hardware.brightnessctl.enable = true;
   # List services that you want to enable:
   virtualisation.docker.enable = true;  
-  # virtualisation.virtualbox.host.enable = true;  
-  # users.extraGroups.vbxusers.members = [ "beren" ];
+  virtualisation.virtualbox.host.enable = true;  
+  users.extraGroups.vbxusers.members = [ "beren" ];
   # acpid
   services.acpid = {
     enable = true;
