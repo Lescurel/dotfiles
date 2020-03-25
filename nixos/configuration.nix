@@ -82,6 +82,7 @@
     ranger
     zathura
     bat
+    niv
 
     # manage the home
     home-manager
@@ -120,7 +121,7 @@
     # Computing
     # cudatoolkit
     #  cudnn
-    texlive.combined.scheme-full
+
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -128,7 +129,6 @@
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
   programs.vim.defaultEditor = true;
   programs.browserpass.enable = true;
-  hardware.brightnessctl.enable = true;
   # List services that you want to enable:
   virtualisation.docker.enable = true;  
   virtualisation.virtualbox.host.enable = true;  
@@ -154,6 +154,8 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
 
   # Enable sound.
   sound.enable = true;
