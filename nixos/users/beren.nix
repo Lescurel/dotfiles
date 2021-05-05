@@ -1,5 +1,15 @@
 {pkgs,...}:
-let colors = import ../colors.nix; in
+let 
+  colors = import ../colors.nix; 
+  # personal info
+  # Should be a nix file with the following structure
+  # {
+  #   gitName = "Name";
+  # }
+  # with the required fields used in the current file
+  # This file is NOT commited
+  berenInfo = import ./beren_personal_info.nix;
+in
 with colors;
 {
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -17,8 +27,11 @@ with colors;
     programs.git = {
       package = pkgs.gitAndTools.gitFull;
       enable = true;
-      userName = "Name";
-      userEmail = "Email";
+      userName = "${berenInfo.gitName}";
+      userEmail = "${berenInfo.gitEmail}";
+      signing.key = "${berenInfo.gitSigningKey}";
+      delta.enable = true;
+      
     };
 
     programs.command-not-found.enable = true;
@@ -31,7 +44,7 @@ with colors;
       plugins = with pkgs.vimPlugins; [
         sensible
         vim-airline
-        The_NERD_tree # file system explorer
+        The_NERD_tree # file system explorer:
         fugitive
         vim-gitgutter # git
         rust-vim
