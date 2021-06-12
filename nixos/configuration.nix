@@ -77,7 +77,7 @@
     wget
     git
     # DE
-    nordic-polar
+    nordic
     gnome3.gnome-tweaks
     gnomeExtensions.gsconnect
     neofetch
@@ -192,7 +192,7 @@
       enable = true;
       wayland = true;
     };
-    desktopManager.gnome3.enable = true;
+    desktopManager.gnome.enable = true;
   };
   
   # to enable android phones
@@ -225,6 +225,7 @@
   ];
 
   # power management
+  services.power-profiles-daemon.enable = false;
   services.tlp = {
 	enable = true;
 	settings = {
