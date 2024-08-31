@@ -1,6 +1,6 @@
 {pkgs,...}:
-let 
-  colors = import ../colors.nix; 
+let
+  colors = import ../colors.nix;
   # personal info
   # Should be a nix file with the following structure
   # {
@@ -18,7 +18,19 @@ with colors;
     home = "/home/beren";
     shell = pkgs.zsh;
     description = "Beren";
-    extraGroups = [ "wheel" "audio" "video" "docker" "beren" "adbusers" "plugdev" "input" "network" "networkmanager"];
+    extraGroups = [
+      "wheel"
+      "audio"
+      "video"
+      "docker"
+      "beren"
+      "adbusers"
+      "plugdev"
+      "input"
+      "network"
+      "networkmanager"
+      "vbxusers"
+    ];
     initialPassword = "test";
   };
   home-manager.useUserPackages = true;
@@ -32,7 +44,6 @@ with colors;
       userEmail = "${berenInfo.gitEmail}";
       signing.key = "${berenInfo.gitSigningKey}";
       delta.enable = true;
-      
     };
 
     programs.command-not-found.enable = true;
@@ -60,4 +71,3 @@ with colors;
     services.lorri.enable = true;
   };
 }
-
