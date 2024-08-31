@@ -13,7 +13,5 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-" autosave
-autocmd TextChanged,TextChangedI <buffer> silent write
 " python-mode enabling for python3
 let g:pymode_python = 'python3'
