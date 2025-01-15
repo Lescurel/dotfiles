@@ -4,7 +4,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./common.nix
-      ./hosts/beleriand.nix
+      ./hosts/ossiriand.nix
       <home-manager/nixos>
       ./zsh.nix
       ./direnv.nix

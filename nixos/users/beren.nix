@@ -36,13 +36,13 @@ with colors;
   home-manager.useUserPackages = true;
   home-manager.useGlobalPkgs = true;
   home-manager.users.beren = {
-    home.stateVersion = "24.05";
+    home.stateVersion = "24.11";
     programs.git = {
       package = pkgs.gitAndTools.gitFull;
       enable = true;
       userName = "${berenInfo.gitName}";
       userEmail = "${berenInfo.gitEmail}";
-      signing.key = "${berenInfo.gitSigningKey}";
+      #signing.key = "${berenInfo.gitSigningKey}";
       delta.enable = true;
     };
 

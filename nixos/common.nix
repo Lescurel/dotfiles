@@ -83,7 +83,7 @@
     git
     # DE
     nordic
-    gnome.gnome-tweaks
+    gnome-tweaks
     gnomeExtensions.gsconnect
     neofetch
 
@@ -110,7 +110,7 @@
     # web
     firefox
     chromium
-    transmission-gtk
+    transmission_4-gtk
 
     # VMs and containers
     docker
@@ -131,7 +131,7 @@
     element-desktop
 
     # Making CAD/CAM
-    cura
+    # cura #libarcus is broekn atm
     openscad
     blender
 
@@ -158,7 +158,10 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
-  programs.vim.defaultEditor = true;
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
   programs.browserpass.enable = true;
   programs.firefox.nativeMessagingHosts.packages = ["browserpass"];
 
@@ -201,7 +204,6 @@
       options = "compose:ralt";
       layout = "us";
     };
-    videoDrivers = ["intel"];
     deviceSection = ''
       Option "DRI" "2"
       Option "TearFree" "true"
@@ -236,6 +238,6 @@
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
   # should.
-  system.stateVersion = "24.05"; # Did you read the comment?
+  system.stateVersion = "24.11"; # Did you read the comment?
 
 }
