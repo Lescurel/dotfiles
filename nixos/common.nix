@@ -103,6 +103,8 @@
     niv
     silver-searcher
     zsh
+    
+    solaar # logitech 
 
     # manage the home
     home-manager
@@ -127,8 +129,10 @@
     tdesktop
     calibre
     zoom-us
-    skypeforlinux
     element-desktop
+    via
+    libheif
+    helvum
 
     # Making CAD/CAM
     # cura #libarcus is broekn atm
@@ -146,6 +150,7 @@
 
     # dev
     emacs
+    zed-editor
 
     # audio
     lmms
@@ -183,10 +188,10 @@
     enable = true;
     nssmdns4 = true;
   };
-
+  hardware.logitech.wireless.enable = true;
   # Enable sound.
   # We use pipewire
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

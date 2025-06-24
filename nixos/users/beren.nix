@@ -65,6 +65,34 @@ with colors;
       ];
       # extraPython3Packages = (ps: with ps; [ python-language-server setuptools ]);
     };
+    
+    programs.emacs = {
+      enable = true;
+      extraConfig = builtins.readFile emacs.d/default.el;
+      extraPackages = epkgs: with epkgs; [
+        ace-window
+        avy
+        crux
+        diff-hl
+        easy-kill
+        eglot
+        editorconfig
+        expand-region
+        flycheck
+        guru-mode
+        projectile
+        magit
+        git-timemachine
+        nlinum
+        smartparens
+        super-save
+        which-key
+        zenburn-theme
+        undo-tree 
+        tree-sitter 
+        tree-sitter-langs 
+      ];
+    };
 
     programs.alacritty.enable=true;
 
